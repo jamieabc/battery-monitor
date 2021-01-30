@@ -5,4 +5,4 @@ Every 5 minutes check battery status, notify in following conditions:
 
 Usage: `battery-monitor`
 
-if want to run in backgroud, run `battery-monitor &`
+if want to run in background, run `battery-monitor &`
