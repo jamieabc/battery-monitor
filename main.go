@@ -86,7 +86,7 @@ func periodicCheck() {
 			}
 
 			if st == BattStatus[StatusCharging] && caps >= ChargeHigh {
-				msg := fmt.Sprintf("Batter full %d", cap)
+				msg := fmt.Sprintf("Batter full %d", caps)
 				err = beeep.Notify("Battery Info", msg, "")
 				if err != nil {
 					panic(err)
