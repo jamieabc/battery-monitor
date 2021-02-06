@@ -5,8 +5,10 @@ import (
 	"github.com/gen2brain/beeep"
 	"io/ioutil"
 	"os"
+	"os/signal"
 	"strconv"
 	"strings"
+	"syscall"
 	"time"
 )
 
@@ -51,8 +53,9 @@ func main() {
 
 	go periodicCheck()
 
-	for {
-	}
+	c := make(chan os.Signal)
+	signal.Notify(c, os.Interrupt, syscall.SIGTERM)
+	<-c
 }
 
 func checkBatteryDir(path string) {
